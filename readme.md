@@ -17,4 +17,8 @@ PASSWORD = 'YOUR_AMAZON_PASSWORD'
 ```
 
 3. #### Keep ```chromedriver``` as per your os in project directory
+4. #### Run Dash Application
+```python
+python main.py
+```
 
