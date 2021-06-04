@@ -16,8 +16,13 @@ app.layout = html.Div(className="column", children=[
         Amazon Bot
     '''),
     html.Div(className="row", children=[
-        dcc.Input(id="product_name", type="text", placeholder="Enter product name", style={"margin-right": "10px"}),
-        html.Button('Search', id='btn_search', n_clicks=0),
+        dcc.Input(id="product_name",
+                  type="text",
+                  placeholder="Enter product name",
+                  style={"margin-right": "10px"}),
+        html.Button('Search',
+                    id='btn_search',
+                    n_clicks=0),
     ]),
     html.Div(id='display_container', style={"margin-top": "16px"})
 ], style={'justify-content': 'center',
@@ -31,13 +36,10 @@ app.layout = html.Div(className="column", children=[
               [dash.dependencies.Input('btn_search', 'n_clicks')],
               [dash.dependencies.State('product_name', 'value')])
 def on_btn_click(n_clicks, value):
-    if n_clicks > 0 and value is not None:
-        selenium = SeleniumManager(base_url="https://www.amazon.com/")
-        selenium.login()
-        if selenium.search("cracking coding interview"):
-            return f"Product: {value} added successfully to cart"
-        else:
-            return "Couldn't add to cart"
+    if n_clicks == 0 and value is None: return ""
+    selenium = SeleniumManager(base_url="https://www.amazon.com/")
+    return f"Product: {value} has been added successfully to cart" if selenium.search(
+        value) else "Couldn't add to cart"
 
 
 if __name__ == '__main__':
