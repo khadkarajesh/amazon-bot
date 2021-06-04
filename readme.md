@@ -1,11 +1,12 @@
+### Amazon Bot
+Bot which automates the add to cart process in amazon 
+
 ### Setup guide
 
 1. #### Install dependency
 
 ```python
-pip
-install - r
-requirements.txt
+pip install - r requirements.txt
 ```
 
 2. #### Use your credential on .env
