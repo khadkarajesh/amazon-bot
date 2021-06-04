@@ -1,7 +1,19 @@
 ### Setup guide
-#### Install dependency
+
+1. #### Install dependency
+
 ```python
-pip install -r requirements.txt
+pip
+install - r
+requirements.txt
 ```
-#### Keep ```chromedriver``` as per your os in project directory
+
+2. #### Use your credential on .env
+
+```python
+USERNAME = 'YOUR_AMAZON_USERNAME'
+PASSWORD = 'YOUR_AMAZON_PASSWORD'
+```
+
+3. #### Keep ```chromedriver``` as per your os in project directory
 
